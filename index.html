@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenny的人物相片牆</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 標題列 -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">
+                <i class="fas fa-camera-retro"></i>
+                Jenny's Photo Gallery
+                <i class="fas fa-heart"></i>
+            </h1>
+            <p class="subtitle">歡迎來到我的精彩人物相片牆！✨</p>
+        </div>
+    </header>
+
+    <!-- 相片牆主要內容 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 篩選按鈕 -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> 全部照片
+                </button>
+                <button class="filter-btn" data-filter="friends">
+                    <i class="fas fa-users"></i> 朋友們
+                </button>
+                <button class="filter-btn" data-filter="family">
+                    <i class="fas fa-home"></i> 家人
+                </button>
+                <button class="filter-btn" data-filter="events">
+                    <i class="fas fa-calendar-star"></i> 活動
+                </button>
+            </div>
+
+            <!-- 相片網格 -->
+            <div class="photo-grid" id="photoGrid">
+                <!-- 照片項目會由 JavaScript 動態生成 -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 燈箱模態框 -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+            <div class="lightbox-nav">
+                <button class="nav-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 載入動畫 -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner">
+            <i class="fas fa-camera"></i>
+        </div>
+        <p>載入精彩照片中...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
