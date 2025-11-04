@@ -1,62 +1,34 @@
-name: Azure Static Web Apps CI/CD
-
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - master
-
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    permissions:
-      # 保留這些權限以確保 SWA 部署工具能夠運作
-      id-token: write
-      contents: read
+    # ... (runs-on, name, permissions 等保持不變)
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
-      
-      # *** 以下步驟是為了解決純 HTML/CSS 專案不需 Build 的問題 ***
-      
+          
+      # 移除這兩個 OIDC 相關的步驟
+      # - name: Install OIDC Client from Core Package
+      #   run: npm install @actions/core@1.6.0 @actions/http-client
+      # - name: Get Id Token
+      #   uses: actions/github-script@v6
+      #   id: idtoken
+      #   with:
+      #       script: |
+      #           const coredemo = require('@actions/core')
+      #           return await coredemo.getIDToken()
+      #       result-encoding: string
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_PLANT_07FEBA70F }}
           action: "upload"
-          # App source code path - 您的 index.html 所在的位置
           app_location: "/" 
-          # Api source code path - 沒有 API 保持空字串
-          api_location: ""
+          api_location: "" 
+          app_build_command: ""
+          output_location: ""
           
-          # ** 關鍵修改：純靜態網站，不執行建置指令 **
-          app_build_command: "" # 設為空字串，跳過 Oryx 的建置流程
-          
-          # ** 關鍵修改：純靜態網站，輸出內容就是 App 本身 **
-          # 設為空字串或 "/"，表示應用程式根目錄就是最終內容
-          output_location: "" 
-          
-          # 由於我們沒有使用 OIDC 腳本，這裡的 token 變數也應該移除或修改
-          # 如果您不需要 OIDC 驗證，可以移除這行
-          # github_id_token: ${{ steps.idtoken.outputs.result }}
-          
-          ###### End of Repository/Build Configurations ######
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          action: "close"
+          # 確保移除 github_id_token 參數
+          # github_id_token: ${{ steps.idtoken.outputs.result }} # <-- 移除此行
