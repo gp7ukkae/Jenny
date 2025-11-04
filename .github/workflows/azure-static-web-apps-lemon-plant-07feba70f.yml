@@ -15,35 +15,39 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
-       id-token: write
-       contents: read
+      # 保留這些權限以確保 SWA 部署工具能夠運作
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
-      - name: Install OIDC Client from Core Package
-        run: npm install @actions/core@1.6.0 @actions/http-client
-      - name: Get Id Token
-        uses: actions/github-script@v6
-        id: idtoken
-        with:
-           script: |
-               const coredemo = require('@actions/core')
-               return await coredemo.getIDToken()
-           result-encoding: string
+      
+      # *** 以下步驟是為了解決純 HTML/CSS 專案不需 Build 的問題 ***
+      
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_PLANT_07FEBA70F }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "." # Built app content directory - optional
-          github_id_token: ${{ steps.idtoken.outputs.result }}
+          # App source code path - 您的 index.html 所在的位置
+          app_location: "/" 
+          # Api source code path - 沒有 API 保持空字串
+          api_location: ""
+          
+          # ** 關鍵修改：純靜態網站，不執行建置指令 **
+          app_build_command: "" # 設為空字串，跳過 Oryx 的建置流程
+          
+          # ** 關鍵修改：純靜態網站，輸出內容就是 App 本身 **
+          # 設為空字串或 "/"，表示應用程式根目錄就是最終內容
+          output_location: "" 
+          
+          # 由於我們沒有使用 OIDC 腳本，這裡的 token 變數也應該移除或修改
+          # 如果您不需要 OIDC 驗證，可以移除這行
+          # github_id_token: ${{ steps.idtoken.outputs.result }}
+          
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
