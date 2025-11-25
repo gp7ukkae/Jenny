@@ -5,16 +5,12 @@ const photoData = [
     {
         id: 1,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/0137.jpg',
-        title: '陽光女孩 Sarah',
-        description: '總是帶著燦爛笑容的好朋友，每次見面都充滿正能量！',
-        category: 'friends'
+        category: 'Jenny'
     },
     {
         id: 2,
-        src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face',
-        title: '攝影師 Alex',
-        description: '才華洋溢的攝影師朋友，總能捕捉最美的瞬間。',
-        category: 'friends'
+        src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/0161.jpg',
+        category: 'Jenny'
     },
     {
         id: 3,
