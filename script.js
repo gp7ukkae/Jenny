@@ -208,18 +208,18 @@ function createPhotoElement(photo, index) {
 // ===========================================
 function getCategoryIcon(category) {
     const icons = {
-        friends: '<i class="fas fa-users"></i>',
-        family: '<i class="fas fa-home"></i>',
-        events: '<i class="fas fa-calendar-star"></i>'
+        young: '<i class="fas fa-users"></i>',
+        yo: '<i class="fas fa-home"></i>',
+        by: '<i class="fas fa-calendar-star"></i>'
     };
     return icons[category] || '';
 }
 
 function getCategoryName(category) {
     const names = {
-        friends: '朋友',
-        family: '家人',
-        events: '活動'
+        young: '青澀時光',
+        yo: '陽光瑜伽',
+        by: '我是伴娘'
     };
     return names[category] || '';
 }
