@@ -7,112 +7,112 @@ const photoData = [
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/510624431_30678378471753521_8897541286298343636_n.jpg',
         title: '✨ 清純微笑的回憶 ✨',
         description: '甜美特寫，純真笑容。',
-        category: 'events'
+        category: 'young'
     },
     {
         id: 2,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/508825931_10065788290166897_3362398011683427178_n.jpg',
         title: '☕ 咖啡午後的驚喜相遇 ☕',
         description: '咖啡廳內，與朋友親密合影。',
-        category: 'friends'
+        category: 'young'
     },
     {
         id: 3,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/503887846_9959232340822493_4074562640052631037_n.jpg',
         title: '🎶 時尚的街頭照片 🎶',
         description: '你在看我嗎? 可以再靠近一點！',
-        category: 'events'
+        category: 'young'
     },
     {
         id: 4,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/499931815_9907887185957009_8108679938280847879_n.jpg',
         title: '👠 街角時尚的閨蜜時光 👗',
         description: '四位朋友，街上團體時尚照。',
-        category: 'family'
+        category: 'young'
     },
     {
         id: 5,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/498194075_9833638613381867_3359413295963216359_n.jpg',
         title: '👭 陽光下的姐妹情深 💖',
         description: '兩人親密自拍，笑容明亮。',
-        category: 'friends'
+        category: 'young'
     },
     {
         id: 6,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/496327316_9765982713480791_7435332601320283689_n.jpg',
         title: '💃 甜美少女的運動瞬間 💫',
         description: '穿禮服玩呼拉圈，俏皮活潑。',
-        category: 'friends'
+        category: 'young'
     },
     {
         id: 7,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/496180996_9781787711900291_8314187817556283348_n.jpg',
         title: '📚 專注的學習者 ✍️',
         description: '課堂或自習，低頭專注筆記。',
-        category: 'events'
+        category: 'young'
     },
     {
         id: 8,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/495136229_9768543579891371_5686415163450705103_n.jpg',
         title: '🤓 畢業季的青澀回眸 🎓',
         description: '戴眼鏡獨照，青澀又認真。',
-        category: 'events'
+        category: 'young'
     },
     {
         id: 9,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/467302065_9609897939026660_422389000193906103_n.jpg',
         title: '🧘‍♀️ 平衡的藝術 🌳',
         description: '戶外瑜伽，穩定的樹式平衡動作。',
-        category: 'events'
+        category: 'yo'
     },
     {
         id: 10,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/467048291_9609955855687535_2282802637738373654_n.jpg',
         title: '💪 力量與伸展的協奏曲 🌿',
         description: '戶外瑜伽，弓箭步姿勢展現力量。',
-        category: 'family'
+        category: 'yo'
     },
     {
         id: 11,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/466988547_9609996045683516_1769953543732805317_n.jpg',
         title: '✨ 寧靜中的優雅扭轉 🍃',
         description: '草地坐姿瑜伽，專注於身體扭轉。',
-        category: 'family'
+        category: 'yo'
     },
     {
         id: 12,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/466973088_9610244512325336_7526970469651928702_n.jpg',
         title: '🏞️ 城市天際線上的舞者 🌄',
         description: '高處瑜伽，舞者式姿勢與城市背景。',
-        category: 'family'
+        category: 'yo'
     },
     {
         id: 13,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/466095794_9581565525193235_4187825850468920599_n.jpg',
         title: '🔬 專業與學術的展現 📜',
         description: '正式服裝，在學術海報前展示成果。',
-        category: 'events'
+        category: 'young'
     },
     {
         id: 14,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/0527.jpg',
         title: '💙 伴娘的甜蜜任務 💐',
         description: '穿著藍色伴娘禮服，開心執行任務的獨照。',
-        category: 'events'
+        category: 'by'
     },
     {
         id: 15,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/0176.jpg',
         title: '😂 姐妹們的爆笑側拍 👰‍♀️',
         description: '伴娘團與朋友在婚禮中，開懷大笑的真摯瞬間。',
-        category: 'events'
+        category: 'by'
     },
     {
         id: 16,
         src: 'https://jennyphoto.blob.core.windows.net/jennyphoto/0161.jpg',
         title: '🥂 舞台上的溫暖祝福 🎤',
-        description: '換上正式套裝，在婚禮上致詞或主持儀式。',
-        category: 'events'
+        description: '換上正式套裝，主持儀式。',
+        category: 'by'
     }
 ];
 
