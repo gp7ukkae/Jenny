@@ -267,9 +267,9 @@ body {
     z-index: 3;
 }
 
-.photo-category.friends { color: var(--primary-color); }
-.photo-category.family { color: var(--green-accent); }
-.photo-category.events { color: var(--purple-accent); }
+.photo-category.young { color: var(--primary-color); }
+.photo-category.yo { color: var(--green-accent); }
+.photo-category.by { color: var(--purple-accent); }
 
 /* ===========================================
    燈箱模態框
